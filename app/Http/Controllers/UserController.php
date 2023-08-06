@@ -53,7 +53,7 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             $usertype = Auth::user()->userType;
-            if ($usertype = "1") {
+            if ($usertype === "1") {
                 return redirect()->intended('/admin');
             }
             return redirect()->intended('/produk');

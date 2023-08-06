@@ -2,12 +2,12 @@
 @section('title', 'ByMe Produk-'.$products->nama_produk)
 @section('konten')
 <div class="container my-5">
-  <div class="row row-cols-2">
-    <div class="col-6">
-      <img src="{{ asset('images/2.jpg') }}" class="object-fit-contain" alt="" height="900">
+  <div class="row row-cols-2 justify-content-center">
+    <div class="col-lg-4">
+      <img src="{{ asset('images/2.jpg') }}" class="img-fluid" alt="Gambar">
     </div>
 
-    <div class="col-6">
+    <div class="col-lg-3">
       <div class="">
           <span class="bg-info rounded-5 p-1 px-2 text-white fw-medium">{{ $products->category->nama_category}}</span>
       </div>

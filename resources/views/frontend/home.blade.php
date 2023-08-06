@@ -1,4 +1,4 @@
-@extends('Frontend.index')
+@extends('frontend.index')
 @section('title', 'ByMe HomePage')
 
 @section('konten')
@@ -7,13 +7,8 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <a href="#">
-                    <img class="img-fluid" src="{{ asset('images/banner1.jpg') }}" alt="Slide Image 1">
+                    <img class="img-fluid" src="{{ asset('images/banner2.jpg') }}" alt="Slide Image 1">
                 </a>        
-            </div>
-            <div class="swiper-slide">
-                <a href="#">
-                    <img class="img-fluid" src="{{ asset('images/banner2.jpg') }}" alt="Slide Image 2">
-                </a>                
             </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -22,7 +17,7 @@
 
 
 <div class="container px-5 mb-5">
-    <h1 class="text-center mt-5 text-primary"><i class="fa-solid fa-grip-lines"></i> Pilihan Produk Kami <i class="fa-solid fa-grip-lines"></i> </h1>
+    <h1 class="text-center mt-5 text-primary">Our Products <i class="fa-solid fa-bag-shopping"></i> </h1>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 justify-content-center mt-5">
     @foreach($products as $product)
     <div class="col-2">

@@ -16,21 +16,21 @@ $breadcrumb-divider:                quote(">");
 $breadcrumb-divider-flipped:        $breadcrumb-divider;
 $breadcrumb-border-radius:          null;
 
-$form-check-input-bg:                     #0096C7;
-$form-check-input-border:                 2px solid #ffffff;
+$form-check-input-bg:                     #ffffff;
+$form-check-input-border:                 2px solid #0096C7;
 $form-check-input-focus-border:           #ffffff;
 
-$form-check-input-checked-color:          #fff;
+$form-check-input-checked-color:          #0096C7;
 $form-check-input-checked-bg-color:       #0096C7;
-$form-check-input-checked-border-color:   #ffffff;
+$form-check-input-checked-border-color:   #0096C7;
 
 
 @import "../Bootstrap/scss/functions";
 @import "../Bootstrap/scss/variables";
 
 $custom-theme-colors : (
-    "km-primary" : #2A9D8F,
-    "km-secondary" : #00509D,
+    "byme-green" : #2a9d8f,
+    "byme-dark-blue" : #023e8a,
     "km-gray" : #F8F9FA,
     "km-gray-100" : #6C757D,
     "km-gray-50" : #CED4DA,
@@ -50,13 +50,30 @@ $theme-colors: map-merge($custom-theme-colors, $theme-colors);
     font-family: 'Poppins', sans-serif;
 }
 
+html, body{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.km-footer{
+    margin-top: auto;
+}
+
 body table .admin-product-size{
     height: 100px;
     width: 100px;
 }
 
-.semvak-dajjal{
-    background: #000;
+.table-responsive {
+    max-height:420px;
+}
+
+.fs-7{
+    font-size: 0.9rem;
 }
 
 

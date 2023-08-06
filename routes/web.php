@@ -31,6 +31,10 @@ Route::get('/produk', function () {
     return view('frontend.produk');
 });
 
+Route::get('/keranjang', function () {
+    return view('frontend.keranjang');
+});
+
 Route::get('/detail', function () {
     return view('frontend.detailProduk');
 });
