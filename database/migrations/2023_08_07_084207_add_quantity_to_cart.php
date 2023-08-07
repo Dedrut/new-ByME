@@ -12,9 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('cart', function (Blueprint $table) {
-            $table->integer('id_order');
-            $table->string('status_produk');
-            $table->foreign('id_order')->references('id_order')->on('orders')->onDelete('cascade');
+            $table->integer('quantity')->default(1);
         });
     }
 
@@ -24,8 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('cart', function (Blueprint $table) {
-            $table->dropColumn('id_order');
-            $table->dropColumn('status_produk');
+            $table->dropColumn('quantity');
         });
     }
 };

@@ -8,32 +8,35 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th>Gambar</th>
-                        <th>Text 1</th>
-                        <th>Text 2</th>
-                        <th>Text 3</th>
-                        <th>Text 4</th>
-                        <th>Text 5</th>
-                        <th></th>
-                      </tr>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th>Gambar</th>
+                            <th>Nama Produk</th>
+                            <th>Jumlah</th>
+                            <th>Harga</th>
+                            <th></th>
+                        </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Lorem</td>
-                        <td>Ipsum</td>
-                        <td>Dolor</td>
-                        <td>Sit</td>
-                        <td>Amet</td>
-                        <td>Syntesis</td>
-                        <td>
-                            <a href="#" class="btn p-0">
-                                <i class="fa-solid fa-square-xmark text-danger fs-5"></i>
-                            </a>
-                        </td>
-                      </tr>
+                        <?php $totalHarga = 0; ?>
+                        <?php $counter = 1; ?>
+                        @foreach($cartList as $cartItem)
+                            <?php $hargaPerProduk = $cartItem->product->harga * $cartItem->quantity; ?>
+                            <?php $totalHarga += $hargaPerProduk; ?>
+                            <tr>
+                                <th scope="row">{{ $counter }}</th>
+                                <td><img class="img-center" height="100" src="/images/produk/{{ $cartItem->product->gambar }}" alt="{{ $cartItem->product->gambar }}"></td>
+                                <td>{{ $cartItem->product->nama_produk }}</td>
+                                <td>{{ $cartItem->quantity }}</td>
+                                <td>{{ $hargaPerProduk }}</td>
+                                <td>
+                                    <a href="{{ route('remove-item', ['id_cart' => $cartItem->id_cart]) }}" class="btn p-0">
+                                        <i class="fa-solid fa-square-xmark text-danger fs-5"></i>
+                                    </a>
+                                </td>                                
+                            </tr>
+                            <?php $counter++; ?>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -85,7 +88,7 @@
                 </div>
 
                 <div class="col-12 d-grid gap-2 mt-3 mb-4">
-                    <button class="btn btn-info rounded-1 fw-medium text-white" type="submit">Check Out</button>                            
+                    <button class="btn btn-info rounded-1 fw-medium text-white" type="submit">Check Out</button>
                 </div>
             </form>
         </div>

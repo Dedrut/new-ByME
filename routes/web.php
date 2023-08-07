@@ -22,7 +22,7 @@ use App\Http\Controllers\TransaksiController;
 */
 
 Route::redirect('/', '/home');
-Route::get('/produk/{id_produk}', [ByMeController::class, 'detailProduk'])->name('detail-produk');
+Route::get('/produk/detail-produk/{id_produk}', [ByMeController::class, 'detailProduk'])->name('detail-produk');
 Route::get('/home', [ByMeController::class, 'index'])->name('home');
 
 
@@ -64,11 +64,10 @@ Route::middleware('guest')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/produk', function () {
-        return view('frontend.index');
-    });
+
+
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
-    Route::post('/logout', [TransaksiController::class, 'storeToCart'])->name('to-cart');
+    Route::post('/produk/storetocart/{id_produk}', [ByMeController::class, 'addToCart'])->name('to-cart');
 
 
     Route::get('/admin', function () {
@@ -78,6 +77,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/order', function () {
         return view('frontend.admin.admin_order');
     })->name('order-page');
+
+
+    Route::get('/keranjang', [ByMeController::class, 'viewCart'])->name('cart-list');
+    Route::get('/keranjang/removeitem/{id_cart}', [ByMeController::class, 'removeItem'])->name('remove-item');
 
 
     Route::get('/admin/category', [CategoryController::class, 'index'])->name('category-page');

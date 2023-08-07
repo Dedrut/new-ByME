@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\product;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -51,12 +52,14 @@ class UserController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
+            $products = product::all();
+
             $request->session()->regenerate();
             $usertype = Auth::user()->userType;
-            if ($usertype === "1") {
+            if ($usertype == "1") {
                 return redirect()->intended('/admin');
             }
-            return redirect()->intended('/produk');
+            return view('frontEnd.home', compact('products'));
         }
 
         return back()->withErrors(['message' => 'Username atau Password salah!']);
