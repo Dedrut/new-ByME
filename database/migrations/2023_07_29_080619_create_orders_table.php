@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('id_user');
             $table->integer('id_produk');
             $table->integer('total_harga');
-            $table->integer('status_order');
+            $table->stirng('status_order');
             $table->timestamps();
 
             $table->foreign('id_user')->references('id_user')->on('user')->onDelete('cascade');
