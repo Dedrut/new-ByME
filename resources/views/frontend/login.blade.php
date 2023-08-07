@@ -20,19 +20,14 @@
 </head>
 <body>
     <div class="login-header">
-        <a href="{{ route('home') }}">
+        <div>
             <div class="login-logo-text">
-                <span id="login-logo">
-                    <div>満<span>牙</span></div>
-                    <div>気<span>尾</span>素</div>
-                </span>
-                <span id="login-title">KiosManga</span>    
+                <span id="login-title">Login ByMe</span>    
             </div>
-            
-        </a>
+        </div>
     </div>
     <div class="login-card">
-        <div class="card-title">Masuk ke akun anda</div>
+{{--         <div class="card-title">Login ByMe</div> --}}
         <form action="{{route('auth')}}" method="POST">
             {{ csrf_field() }}
             @if ($errors->any())
@@ -42,24 +37,18 @@
             @endif
             <div class="card-input">
                 <label for="Username">Email</label>
-                <input type="text" name="email">
+                <input type="text" name="email" placeholder="youremail@gmail.com">
             </div>
             <div class="card-input">
                 <label for="Password">Password</label>
-                <input type="password" name="password">
-            </div>
-            <div class="other-input">
-                <div>&nbsp;</div>
-                <div class="remember">
-                    {{-- <a href="{{route('password-page')}}">Lupa Password?</a> --}}
-                </div>       
+                <input type="password" name="password" placeholder="your password">
             </div>
             <button type="submit" class="card-button">
-                Continue
+                Login
             </button>
         </form>
         <div class="card-footer">
-            Belum punya akun? <a href="{{ route('register-page') }}">Daftar</a>
+            <a href="{{ route('register-page') }}">Belum punya akun? Daftar</a>
         </div>
     </div>
 </body>

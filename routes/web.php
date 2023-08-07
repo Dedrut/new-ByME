@@ -31,15 +31,20 @@ Route::get('/produk', function () {
     return view('frontend.produk');
 });
 
-Route::get('/keranjang', function () {
-    return view('frontend.keranjang');
-});
-
 Route::get('/detail', function () {
     return view('frontend.detailProduk');
 });
 
 
+
+Route::get('/keranjang', function () {
+    return view('frontend.keranjang');
+});
+
+
+Route::get('/detail-pesanan', function () {
+    return view('frontend.detailPesanan');
+});
 
 
 Route::middleware('guest')->group(function () {

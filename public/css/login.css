@@ -67,7 +67,7 @@ body, a {
 
 body {
   background-color: #fcfdff;
-  font-family: "Asap", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .login-header {
@@ -120,80 +120,62 @@ body {
   margin-bottom: 20px;
 }
 .login-card .card-input {
-  font-size: 0.9rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
 }
 .login-card .card-input input {
-  font-family: "Asap", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-top: 5px;
   padding: 5px 8px;
-  border: none;
-  background-color: #E9ECEF;
+  border: 0.5px #0077b6 solid;
   border-radius: 3px;
 }
 .login-card .card-input input:focus {
-  outline: 3px solid rgba(42, 157, 144, 0.3058823529);
-}
-.login-card .other-input {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-}
-.login-card .other-input .remember {
-  display: flex;
-  align-items: center;
-}
-.login-card .other-input .remember label, .login-card .other-input .remember input {
-  margin-left: 5px;
-  cursor: pointer;
-}
-.login-card .other-input a {
-  color: #2A9D8F;
-  font-weight: 500;
-}
-.login-card .other-input a:hover {
-  color: #238176;
+  outline: 3px solid #0077b6;
 }
 .login-card .error-message {
-  background-color: rgba(42, 157, 144, 0.1529411765);
-  color: #eb0b1a;
+  background-color: #ffeaea;
+  color: #e5383b;
   padding: 15px 10px;
-  border-left: 3px solid #d11320;
+  border-left: 3px solid #d41619;
   font-weight: 500;
 }
 .login-card .card-button {
-  background-color: #2A9D8F;
+  background-color: #0096c7;
   color: white;
   display: block;
   width: 100%;
   padding: 7px 0;
   font-weight: 500;
-  font-size: 1.01rem;
+  font-size: 1.1rem;
+  font-weight: 500;
   border-radius: 8px;
+  margin-top: 2rem;
+}
+.login-card .card-button:hover {
+  background-color: #0077b6;
 }
 .login-card .card-footer {
   padding: 20px 0;
   text-align: center;
 }
 .login-card .card-footer a {
-  color: #2A9D8F;
+  color: #057398;
 }
 
-.login-card::before {
-  content: "";
-  position: absolute;
-  display: block;
-  border-radius: 10px 10px 0 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: #2A9D8F;
-}
-
+/* .login-card::before{
+    content: "";
+    position: absolute;
+    display: block;
+    border-radius: 10px 10px 0 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #0096c7;
+} */
 .total {
   display: flex;
 }
@@ -219,7 +201,7 @@ body {
 .error-msg {
   font-size: 0.85rem;
   margin-top: 3px;
-  color: #d11320;
+  color: #e5383b;
   font-weight: 500;
   margin-left: 1px;
 }

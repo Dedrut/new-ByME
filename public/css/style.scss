@@ -59,6 +59,10 @@ body{
     flex-direction: column;
 }
 
+a{
+    text-decoration: none;
+}
+
 .km-footer{
     margin-top: auto;
 }
@@ -76,6 +80,18 @@ body table .admin-product-size{
     font-size: 0.9rem;
 }
 
+.truncate-1{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.byme-table{
+    border-collapse:separate; 
+    border-spacing: 0 0.2em;
+}
 
 :root{
     --swiper-theme-color: #00c49a;

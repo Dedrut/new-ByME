@@ -1,5 +1,5 @@
 @extends('frontend.index')
-@section('title', 'ByMe HomePage')
+@section('title', 'ByMe Keranjang')
 
 @section('konten')
 <div class="container-fluid">
@@ -63,23 +63,23 @@
                 <div class=" text-km-gray-100 mt-3 mb-1">Metode Pembayaran</div>
                 <div class="row row-cols-1 gy-3">
                     <label class="col">
-                        <input type="radio" checked class="me-1 form-check-input" name="metodePembayaran">
+                        <input type="radio" checked class="me-1 form-check-input" name="metodePembayaran" value="Mandiri">
                         <i class="fa-regular fa-credit-card me-1"></i>
                         Virtual Account Mandiri
                     </label>
                     <label class="col">
-                        <input type="radio" class="me-1 form-check-input" name="metodePembayaran">
+                        <input type="radio" class="me-1 form-check-input" name="metodePembayaran" value="BJB">
                         <i class="fa-solid fa-credit-card me-1"></i>
                         Virtual Account BJB
                     </label>
                     <label class="col">
                         <input type="radio" class="me-1 form-check-input" name="metodePembayaran">
-                        <i class="fa-regular fa-credit-card me-1"></i>
+                        <i class="fa-regular fa-credit-card me-1" value="BNI"></i>
                         Virtual Account BNI
                     </label>
                     <label class="col">
                         <input type="radio" class="me-1 form-check-input" name="metodePembayaran">
-                        <i class="fa-solid fa-credit-card me-1"></i>
+                        <i class="fa-solid fa-credit-card me-1" value="BRI"></i>
                         Virtual Account BRI
                     </label>
                 </div>

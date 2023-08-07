@@ -22,7 +22,7 @@ return new class extends Migration
 
             $table->foreign('id_user')->references('id_user')->on('user')->onDelete('cascade');
             $table->foreign('id_produk')->references('id_produk')->on('product')->onDelete('cascade');
-            $table->foreign('id_order')->references('id_produk')->on('product')->onDelete('cascade');
+            $table->foreign('id_order')->references('id_order')->on('orders')->onDelete('cascade');
         });
     }
 
