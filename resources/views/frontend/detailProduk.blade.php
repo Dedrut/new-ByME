@@ -17,14 +17,15 @@
       </div>
       <hr class="border border-1 border-primary my-4">
 
-      <form action="{{ route('to-cart') }}" class="row">
-          <div class="col-5">
-              <label class="fw-medium mb-2">JUMLAH</label>
-              <input type="number" class="form-control" value="1" min="1" max="{{ $products->jumlah }}">
-          </div>
-          <div class="col-12 d-grid gap-2 mt-4">
-              <button class="btn btn-primary rounded-1 km-fw-medium text-white fw-medium fs-5" type="submit">Tambah Keranjang</button>                            
-          </div>
+      <form action="{{ route('to-cart', $products->id_produk) }}" class="row" method="POST">
+        @csrf
+        <div class="col-5">
+            <label class="fw-medium mb-2">JUMLAH</label>
+            <input type="number" name="quantity" class="form-control" value="1" min="1" max="{{ $products->jumlah }}">
+        </div>
+        <div class="col-12 d-grid gap-2 mt-4">
+            <button class="btn btn-primary rounded-1 km-fw-medium text-white fw-medium fs-5" type="submit">Tambah Keranjang</button>                            
+        </div>
       </form>
     </div>
   </div>

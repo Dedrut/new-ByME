@@ -61,7 +61,7 @@
             </ul>
 
             <div class="d-flex">
-              <a href="#" class="fs-5 me-3 text-center link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+              <a href="{{ route('cart-list') }}" class="fs-5 me-3 text-center link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <div class="fs-6">Cart</div>
               </a>
