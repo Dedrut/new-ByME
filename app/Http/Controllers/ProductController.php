@@ -19,17 +19,9 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $categories = category::all();
         $products = product::all();
-        return view('frontend.admin.admin_product', ['categories' => $categories, 'products' => $products]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $category = category::all();
+        return view('backend.product', compact('products', 'category'));
     }
 
     /**
@@ -96,20 +88,20 @@ class ProductController extends Controller
     public function edit($id)
     {
         $products = product::find($id);
-        $categories = category::all();
-        return view('frontend.admin.admin_product_edit', compact('products', 'categories'));
+        return response()->json($products);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+        $id = $request->idProduk;
         $validator = Validator::make($request->all(), [
             'editCategoryName' => 'required',
             'editProductName' => 'required',
             'editDeskripsi' => 'required',
-            'editGambar' => 'required|max:50000', // Ubah batasan ukuran file sesuai kebutuhan
+            'editGambar' => 'max:50000', // Ubah batasan ukuran file sesuai kebutuhan
             'editJumlah' => 'required',
             'editHarga' => 'required',
         ]);

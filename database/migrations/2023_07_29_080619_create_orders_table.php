@@ -14,14 +14,12 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->integer('id_order')->autoIncrement();
             $table->integer('id_user');
-            $table->integer('id_produk');
             $table->integer('total_harga');
             $table->string('status_order');
 
             $table->timestamps();
 
             $table->foreign('id_user')->references('id_user')->on('user')->onDelete('cascade');
-            $table->foreign('id_produk')->references('id_produk')->on('product')->onDelete('cascade');
         });
     }
 

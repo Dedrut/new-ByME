@@ -25,4 +25,14 @@ class order extends Model
     {
         return $this->belongsTo(user::class, 'id_user', 'id_user');
     }
+
+    public function cart()
+    {
+        return $this->hasMany(cart::class, 'id_order', 'id_order');
+    }
+
+    public function pembelian()
+    {
+        return $this->hasMany(pembelian::class, 'id_order', 'id_order');
+    }
 }

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('cart', function (Blueprint $table) {
-            $table->integer('id_order');
+            $table->integer('id_order')->nullable();
             $table->string('status_produk');
             $table->foreign('id_order')->references('id_order')->on('orders')->onDelete('cascade');
         });

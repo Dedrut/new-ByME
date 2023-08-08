@@ -37,16 +37,6 @@ Route::get('/detail', function () {
 
 
 
-Route::get('/keranjang', function () {
-    return view('frontend.keranjang');
-});
-
-
-Route::get('/detail-pesanan', function () {
-    return view('frontend.detailPesanan');
-});
-
-
 Route::middleware('guest')->group(function () {
 
     Route::get('/daftar', function () {
@@ -82,6 +72,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/keranjang', [ByMeController::class, 'viewCart'])->name('cart-list');
     Route::get('/keranjang/removeitem/{id_cart}', [ByMeController::class, 'removeItem'])->name('remove-item');
 
+    Route::get('/transaksi', [TransaksiController::class, 'historyTransaksi'])->name('history-transaksi');
+    Route::post('/checkout', [TransaksiController::class, 'prosesTransaksi'])->name('checkout');
+    Route::get('/checkout/{external_id}', [TransaksiController::class, 'prosesPembayaran'])->name('pembayaran');
+
 
     Route::get('/admin/category', [CategoryController::class, 'index'])->name('category-page');
     Route::post('/admin/category', [CategoryController::class, 'store'])->name('add-category');
@@ -91,6 +85,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/product', [ProductController::class, 'index'])->name('product-page');
     Route::post('/admin/product', [ProductController::class, 'store'])->name('add-product');
     Route::get('/admin/product/{id_produk}', [ProductController::class, 'edit'])->name('edit-product');
-    Route::post('/admin/product/{id_produk}/update', [ProductController::class, 'update'])->name('update-product');
-    Route::delete('/admin/product/{id_produk}/delete', [ProductController::class, 'destroy'])->name('delete-product');
+    Route::post('/admin/product/update', [ProductController::class, 'update'])->name('update-product');
+    Route::get('/admin/product/delete/{id_produk}', [ProductController::class, 'destroy'])->name('delete-product');
 });
+
+Route::post('/callback/pembayaran', [TransaksiController::class, 'callbackPembayaran']);
+Route::post('/callback/va', [TransaksiController::class, 'callbackVirtualAccount']);
